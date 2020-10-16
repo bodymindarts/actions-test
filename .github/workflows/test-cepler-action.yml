@@ -6,10 +6,22 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
+          ref: main
           fetch-depth: 0
       - id: cepler
         uses: bodymindarts/cepler-action@main
         with:
           environment: testflight
-      - name: Needs deploying
+          prepare: true
+      - if: ${{ steps.cepler.outputs.needs_deploying == 'true' }}
+        name: Deploy
         run: echo "The time was ${{ steps.cepler.outputs.needs_deploying }}"
+      - if: ${{ steps.cepler.outputs.needs_deploying == 'true' }}
+        uses: bodymindarts/cepler-action@main
+        with:
+          environment: testflight
+          record: true
+      - if: ${{ steps.cepler.outputs.needs_deploying == 'true' }}
+        run: |
+          git pull --rebase
+          git push
