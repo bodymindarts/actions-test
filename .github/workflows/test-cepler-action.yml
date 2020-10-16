@@ -1,12 +1,12 @@
 name: test-cepler-action
 on: [push]
 jobs:
-  prepare:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: main
+          ref: master
           fetch-depth: 0
       - id: cepler
         uses: bodymindarts/cepler-action@main
