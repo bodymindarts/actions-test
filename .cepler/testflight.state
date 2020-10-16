@@ -1,0 +1,8 @@
+---
+current:
+  head_commit: 294c719972db945a77c6ce67ca7839827b289a77
+  files:
+    "{latest}/hello.yml":
+      file_hash: bb56b055142c0ebb2eb4a8af02063a17ad059132
+      from_commit: 294c719972db945a77c6ce67ca7839827b289a77
+      message: Test cepler action
