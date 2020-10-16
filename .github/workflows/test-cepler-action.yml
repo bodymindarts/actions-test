@@ -22,6 +22,4 @@ jobs:
           environment: testflight
           record: true
       - if: ${{ steps.cepler.outputs.needs_deploying == 'true' }}
-        run: |
-          git pull --rebase
-          git push
+        run: "git pull --rebase && git push"
