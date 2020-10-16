@@ -7,6 +7,9 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - uses: bodymindarts/cepler-action@main
+      - id: cepler
+        uses: bodymindarts/cepler-action@main
         with:
           environment: testflight
+      - name: Needs deploying:
+        run: echo "The time was ${{ steps.cepler.outputs.needs_deploying }}"
