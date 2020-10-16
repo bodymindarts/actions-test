@@ -11,5 +11,5 @@ jobs:
         uses: bodymindarts/cepler-action@main
         with:
           environment: testflight
-      - name: Needs deploying:
+      - name: Needs deploying
         run: echo "The time was ${{ steps.cepler.outputs.needs_deploying }}"
