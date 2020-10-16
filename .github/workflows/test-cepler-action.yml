@@ -5,4 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: bodymindarts/cepler-action
+      - uses: bodymindarts/cepler-action@00d7760
